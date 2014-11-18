@@ -1,0 +1,59 @@
+
+Description="JSX"
+
+Keywords={
+  { Id=1,
+    List={"abstract", "break", "class", "const", "continue", "debugger",
+    "default", "delete", "enum", "export", "extends", "finally", "instanceof",
+    "import", "implements", "in", "goto", "native", "package", "private",
+    "protected", "public", "super", "throw", "throws", "transient", "typeof",
+    "void", "false", "with", "for", "switch", "try", "while", "if", "do",
+    "else", "return", "null", "case", "catch", "true", "new", "prototype",
+    "var", "namespace","use", "internal", "interface", "yields", "let"
+    },
+  },
+  { Id=2,
+    List={"function", "boolean", "byte", "char", "double", "float", "int",
+    "long", "short", "static", "decimal", "enum", "sbyte", "uint", "ulong",
+    "ushort", "void"},
+  },
+  { Id=3,
+    List={"Array", "Date", "eval", "function", "hasOwnProperty", "Infinity",
+    "isFinite", "isNaN", "isPrototypeOf", "length", "Math", "NaN", "name",
+    "Number", "Object", "prototype", "String", "toString", "undefined",
+    "valueOf",}
+  },
+  { Id=4,
+    List={"this"},
+  },
+  { Id=5,
+    Regex=[[(\w+)\s*[=:]\s*function]],
+  },
+  { Id=6,
+    Regex=[[function\s+(\w+)\s?\(]],
+  },
+  { Id=7,
+    -- supports simple inline regex, e.g. /regex/
+    -- not sure if this works for all cases!
+    Regex=[[\/[^*].*?\/[msixpodualgc]*]],
+    Group=0
+  },
+}
+
+Strings={
+  Delimiter=[["|']],
+}
+
+IgnoreCase=false
+
+Comments={
+  { Block=false,
+    Delimiter= { [[\/\/]] },
+  },
+  { Block=true,
+    Nested=false,
+    Delimiter= { [[\/\*]],[[\*\/]],}
+  }
+}
+
+Operators=[[=|<|>|\*|\+|\-|\/|&|!|\|]]
